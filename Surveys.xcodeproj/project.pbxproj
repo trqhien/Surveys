@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21051C3E232235C200160A3C /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21051C3D232235C200160A3C /* NetworkResult.swift */; };
 		2133290F232226DF00D04AB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2133290E232226DF00D04AB4 /* AppDelegate.swift */; };
 		21332911232226DF00D04AB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21332910232226DF00D04AB4 /* ViewController.swift */; };
 		21332916232226E000D04AB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21332915232226E000D04AB4 /* Assets.xcassets */; };
@@ -16,6 +17,12 @@
 		2133293223222E2700D04AB4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2133293123222E2700D04AB4 /* Endpoint.swift */; };
 		2133293423222E4D00D04AB4 /* APIServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2133293323222E4D00D04AB4 /* APIServiceType.swift */; };
 		2133293623222E6B00D04AB4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2133293523222E6B00D04AB4 /* APIService.swift */; };
+		217980982322337E00A08DEB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217980972322337E00A08DEB /* NetworkManager.swift */; };
+		2179809B232233CE00A08DEB /* URLSessionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2179809A232233CE00A08DEB /* URLSessionType.swift */; };
+		2179809D232233EF00A08DEB /* URLSession+loadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2179809C232233EF00A08DEB /* URLSession+loadData.swift */; };
+		2179809F2322340F00A08DEB /* URLRequest+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2179809E2322340F00A08DEB /* URLRequest+init.swift */; };
+		217980A12322342600A08DEB /* URL+appendingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217980A02322342600A08DEB /* URL+appendingParameters.swift */; };
+		2884C1B0183A4659482EA50D /* Pods_Surveys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9D4D0D0A8F946769B1698D /* Pods_Surveys.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21051C3D232235C200160A3C /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		2133290B232226DF00D04AB4 /* Surveys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surveys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2133290E232226DF00D04AB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21332910232226DF00D04AB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +50,14 @@
 		2133293123222E2700D04AB4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		2133293323222E4D00D04AB4 /* APIServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceType.swift; sourceTree = "<group>"; };
 		2133293523222E6B00D04AB4 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		217980972322337E00A08DEB /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		2179809A232233CE00A08DEB /* URLSessionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionType.swift; sourceTree = "<group>"; };
+		2179809C232233EF00A08DEB /* URLSession+loadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+loadData.swift"; sourceTree = "<group>"; };
+		2179809E2322340F00A08DEB /* URLRequest+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+init.swift"; sourceTree = "<group>"; };
+		217980A02322342600A08DEB /* URL+appendingParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+appendingParameters.swift"; sourceTree = "<group>"; };
+		A89A3FC38E8E974552DA8E4D /* Pods-Surveys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.release.xcconfig"; path = "Target Support Files/Pods-Surveys/Pods-Surveys.release.xcconfig"; sourceTree = "<group>"; };
+		BD42B07A17973BB3901616B9 /* Pods-Surveys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.debug.xcconfig"; path = "Target Support Files/Pods-Surveys/Pods-Surveys.debug.xcconfig"; sourceTree = "<group>"; };
+		CE9D4D0D0A8F946769B1698D /* Pods_Surveys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surveys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2884C1B0183A4659482EA50D /* Pods_Surveys.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +85,8 @@
 				2133290D232226DF00D04AB4 /* Surveys */,
 				21332922232226E000D04AB4 /* SurveysTests */,
 				2133290C232226DF00D04AB4 /* Products */,
+				FB04F0BFF07C858ED3E46AE4 /* Pods */,
+				596B9F611DBF7C9AE51743B4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,12 +124,43 @@
 		2133292E23222DC300D04AB4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				21798099232233B300A08DEB /* Extensions */,
 				2133292F23222E0F00D04AB4 /* HTTPMethod.swift */,
 				2133293123222E2700D04AB4 /* Endpoint.swift */,
 				2133293323222E4D00D04AB4 /* APIServiceType.swift */,
 				2133293523222E6B00D04AB4 /* APIService.swift */,
+				217980972322337E00A08DEB /* NetworkManager.swift */,
+				21051C3D232235C200160A3C /* NetworkResult.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		21798099232233B300A08DEB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2179809A232233CE00A08DEB /* URLSessionType.swift */,
+				2179809C232233EF00A08DEB /* URLSession+loadData.swift */,
+				2179809E2322340F00A08DEB /* URLRequest+init.swift */,
+				217980A02322342600A08DEB /* URL+appendingParameters.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		596B9F611DBF7C9AE51743B4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CE9D4D0D0A8F946769B1698D /* Pods_Surveys.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB04F0BFF07C858ED3E46AE4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BD42B07A17973BB3901616B9 /* Pods-Surveys.debug.xcconfig */,
+				A89A3FC38E8E974552DA8E4D /* Pods-Surveys.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,9 +170,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 21332928232226E000D04AB4 /* Build configuration list for PBXNativeTarget "Surveys" */;
 			buildPhases = (
+				CCAE28807BB3F6ED06DD14C6 /* [CP] Check Pods Manifest.lock */,
 				21332907232226DF00D04AB4 /* Sources */,
 				21332908232226DF00D04AB4 /* Frameworks */,
 				21332909232226DF00D04AB4 /* Resources */,
+				9E2C8662E4DF1C171814BDB1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,14 +260,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		9E2C8662E4DF1C171814BDB1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Surveys/Pods-Surveys-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Surveys/Pods-Surveys-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Surveys/Pods-Surveys-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CCAE28807BB3F6ED06DD14C6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Surveys-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		21332907232226DF00D04AB4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2179809B232233CE00A08DEB /* URLSessionType.swift in Sources */,
+				2179809F2322340F00A08DEB /* URLRequest+init.swift in Sources */,
 				21332911232226DF00D04AB4 /* ViewController.swift in Sources */,
+				21051C3E232235C200160A3C /* NetworkResult.swift in Sources */,
 				2133293423222E4D00D04AB4 /* APIServiceType.swift in Sources */,
 				2133290F232226DF00D04AB4 /* AppDelegate.swift in Sources */,
+				217980A12322342600A08DEB /* URL+appendingParameters.swift in Sources */,
+				217980982322337E00A08DEB /* NetworkManager.swift in Sources */,
+				2179809D232233EF00A08DEB /* URLSession+loadData.swift in Sources */,
 				2133293223222E2700D04AB4 /* Endpoint.swift in Sources */,
 				2133293623222E6B00D04AB4 /* APIService.swift in Sources */,
 				2133293023222E0F00D04AB4 /* HTTPMethod.swift in Sources */,
@@ -370,6 +470,7 @@
 		};
 		21332929232226E000D04AB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD42B07A17973BB3901616B9 /* Pods-Surveys.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -388,6 +489,7 @@
 		};
 		2133292A232226E000D04AB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A89A3FC38E8E974552DA8E4D /* Pods-Surveys.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

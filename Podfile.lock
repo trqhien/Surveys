@@ -1,0 +1,22 @@
+PODS:
+  - Codextended (0.2.0)
+
+DEPENDENCIES:
+  - Codextended (from `https://github.com/JohnSundell/Codextended.git`, tag `0.3.0`)
+
+EXTERNAL SOURCES:
+  Codextended:
+    :git: https://github.com/JohnSundell/Codextended.git
+    :tag: 0.3.0
+
+CHECKOUT OPTIONS:
+  Codextended:
+    :git: https://github.com/JohnSundell/Codextended.git
+    :tag: 0.3.0
+
+SPEC CHECKSUMS:
+  Codextended: 9974c2ce5c3f2191c75aebaf88172b852482c06f
+
+PODFILE CHECKSUM: d1746aa45bee36fcc7510c433d9ae8a0bea04923
+
+COCOAPODS: 1.7.5
