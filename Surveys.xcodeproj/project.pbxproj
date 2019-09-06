@@ -12,6 +12,10 @@
 		21332916232226E000D04AB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21332915232226E000D04AB4 /* Assets.xcassets */; };
 		21332919232226E000D04AB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21332917232226E000D04AB4 /* LaunchScreen.storyboard */; };
 		21332924232226E000D04AB4 /* SurveysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21332923232226E000D04AB4 /* SurveysTests.swift */; };
+		2133293023222E0F00D04AB4 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2133292F23222E0F00D04AB4 /* HTTPMethod.swift */; };
+		2133293223222E2700D04AB4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2133293123222E2700D04AB4 /* Endpoint.swift */; };
+		2133293423222E4D00D04AB4 /* APIServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2133293323222E4D00D04AB4 /* APIServiceType.swift */; };
+		2133293623222E6B00D04AB4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2133293523222E6B00D04AB4 /* APIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,10 @@
 		2133291F232226E000D04AB4 /* SurveysTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveysTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21332923232226E000D04AB4 /* SurveysTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveysTests.swift; sourceTree = "<group>"; };
 		21332925232226E000D04AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2133292F23222E0F00D04AB4 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		2133293123222E2700D04AB4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		2133293323222E4D00D04AB4 /* APIServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceType.swift; sourceTree = "<group>"; };
+		2133293523222E6B00D04AB4 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +83,7 @@
 		2133290D232226DF00D04AB4 /* Surveys */ = {
 			isa = PBXGroup;
 			children = (
+				2133292E23222DC300D04AB4 /* Network */,
 				2133290E232226DF00D04AB4 /* AppDelegate.swift */,
 				21332910232226DF00D04AB4 /* ViewController.swift */,
 				21332915232226E000D04AB4 /* Assets.xcassets */,
@@ -91,6 +100,17 @@
 				21332925232226E000D04AB4 /* Info.plist */,
 			);
 			path = SurveysTests;
+			sourceTree = "<group>";
+		};
+		2133292E23222DC300D04AB4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2133292F23222E0F00D04AB4 /* HTTPMethod.swift */,
+				2133293123222E2700D04AB4 /* Endpoint.swift */,
+				2133293323222E4D00D04AB4 /* APIServiceType.swift */,
+				2133293523222E6B00D04AB4 /* APIService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +214,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				21332911232226DF00D04AB4 /* ViewController.swift in Sources */,
+				2133293423222E4D00D04AB4 /* APIServiceType.swift in Sources */,
 				2133290F232226DF00D04AB4 /* AppDelegate.swift in Sources */,
+				2133293223222E2700D04AB4 /* Endpoint.swift in Sources */,
+				2133293623222E6B00D04AB4 /* APIService.swift in Sources */,
+				2133293023222E0F00D04AB4 /* HTTPMethod.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
