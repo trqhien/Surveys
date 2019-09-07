@@ -13,6 +13,15 @@ final class PageIndicatorView: UIView {
 
     private var views: [UIView] = []
 
+    private(set) var currentIndex: Int! {
+        didSet {
+            if oldValue != nil {
+                views[oldValue].backgroundColor = .clear
+            }
+            views[currentIndex].backgroundColor = .white
+        }
+    }
+
     func reload() {
         let numberOfItems = dataSource.numberOfItems(in: self)
 
@@ -21,7 +30,12 @@ final class PageIndicatorView: UIView {
         addItems(numberOfItems: numberOfItems)
     }
 
-    func addItems(numberOfItems: Int) {
+    func focus(at index: Int) {
+        currentIndex = index
+    }
+
+    private func addItems(numberOfItems: Int) {
+        self.subviews.forEach { $0.removeFromSuperview() }
 
         views = (1...numberOfItems).map { _ -> UIView in
             let item = UIView()
@@ -32,6 +46,8 @@ final class PageIndicatorView: UIView {
             item.layer.borderColor = UIColor.white.cgColor
             return item
         }
+
+        currentIndex = 0
 
         let stackView = UIStackView(arrangedSubviews: views)
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -47,14 +63,10 @@ final class PageIndicatorView: UIView {
 
 protocol PageIndicatorViewDataSource: class {
     func numberOfItems(in pageIndicatorView: PageIndicatorView) -> Int
-
-    func pageIndicatorView(_ pageIndicatorView: PageIndicatorView, navigateToItemAtIndex toIndex: Int, fromIndex: Int)
 }
 
 extension PageIndicatorViewDataSource {
     func numberOfItems(in pageIndicatorView: PageIndicatorView) -> Int {
         return 0
     }
-
-    func pageIndicatorView(_ pageIndicatorView: PageIndicatorView, navigateToItemAtIndex toIndex: Int, fromIndex: Int) {}
 }

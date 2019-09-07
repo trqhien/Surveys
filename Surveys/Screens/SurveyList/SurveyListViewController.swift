@@ -26,8 +26,8 @@ final class SurveyListViewController: UIViewController {
             $0.allowsSelection = false
             $0.tableFooterView = UIView(frame: .zero)
             $0.showsVerticalScrollIndicator = false
+            $0.showsHorizontalScrollIndicator = false
             $0.register(SurveyCell.self)
-
     }
 
     private lazy var pageIndicator = PageIndicatorView()
@@ -96,6 +96,24 @@ extension SurveyListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height
     }
+}
+
+extension SurveyListViewController: UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        guard
+            let indexPaths = tableView.indexPathsForVisibleRows,
+            indexPaths.count == 1,
+            let indexPath = indexPaths.first
+            else { return }
+
+        pageIndicator.focus(at: indexPath.row)
+
+    }
+
+    func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
+        pageIndicator.focus(at: 0)
+    }
+
 }
 
 extension SurveyListViewController: PageIndicatorViewDataSource {

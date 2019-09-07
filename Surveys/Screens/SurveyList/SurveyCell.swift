@@ -20,7 +20,7 @@ final class SurveyCell: UITableViewCell, CellReusable {
 
     private let titleLabel = UILabel().configure {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.font = UIFont.boldSystemFont(ofSize: 30)//systemFont(ofSize: 20)
+        $0.font = UIFont.boldSystemFont(ofSize: 30)
         $0.textColor = .white
         $0.textAlignment = .center
         $0.numberOfLines = 0
@@ -64,7 +64,7 @@ final class SurveyCell: UITableViewCell, CellReusable {
             options: [.processor(OverlayImageProcessor(overlay: .black, fraction: 0.6))],
             completionHandler: { [weak self] result in
                 switch result {
-                case .failure(let error):
+                case .failure:
                     self?.coverImage.image = UIImage(named: "placeholder-cover")
                 default:
                     break
