@@ -8,8 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		21051C3E232235C200160A3C /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21051C3D232235C200160A3C /* NetworkResult.swift */; };
+		21051C4223223C0C00160A3C /* SurveyListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21051C4123223C0C00160A3C /* SurveyListViewModel.swift */; };
+		21051C452322400800160A3C /* Survey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21051C442322400800160A3C /* Survey.swift */; };
+		21051C472322411800160A3C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21051C462322411800160A3C /* Theme.swift */; };
+		21051C4A2322487700160A3C /* InlineConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21051C492322487700160A3C /* InlineConfigurable.swift */; };
+		21051C4C232259A500160A3C /* SurveyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21051C4B232259A500160A3C /* SurveyCell.swift */; };
+		21051C4E23225A5F00160A3C /* Identifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21051C4D23225A5F00160A3C /* Identifiable.swift */; };
+		21051C5023225A8600160A3C /* UITableView+CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21051C4F23225A8600160A3C /* UITableView+CellReusable.swift */; };
 		2133290F232226DF00D04AB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2133290E232226DF00D04AB4 /* AppDelegate.swift */; };
-		21332911232226DF00D04AB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21332910232226DF00D04AB4 /* ViewController.swift */; };
+		21332911232226DF00D04AB4 /* SurveyListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21332910232226DF00D04AB4 /* SurveyListViewController.swift */; };
 		21332916232226E000D04AB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21332915232226E000D04AB4 /* Assets.xcassets */; };
 		21332919232226E000D04AB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21332917232226E000D04AB4 /* LaunchScreen.storyboard */; };
 		21332924232226E000D04AB4 /* SurveysTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21332923232226E000D04AB4 /* SurveysTests.swift */; };
@@ -37,9 +44,16 @@
 
 /* Begin PBXFileReference section */
 		21051C3D232235C200160A3C /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
+		21051C4123223C0C00160A3C /* SurveyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewModel.swift; sourceTree = "<group>"; };
+		21051C442322400800160A3C /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
+		21051C462322411800160A3C /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		21051C492322487700160A3C /* InlineConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InlineConfigurable.swift; sourceTree = "<group>"; };
+		21051C4B232259A500160A3C /* SurveyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyCell.swift; sourceTree = "<group>"; };
+		21051C4D23225A5F00160A3C /* Identifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifiable.swift; sourceTree = "<group>"; };
+		21051C4F23225A8600160A3C /* UITableView+CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+CellReusable.swift"; sourceTree = "<group>"; };
 		2133290B232226DF00D04AB4 /* Surveys.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Surveys.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2133290E232226DF00D04AB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		21332910232226DF00D04AB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		21332910232226DF00D04AB4 /* SurveyListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewController.swift; sourceTree = "<group>"; };
 		21332915232226E000D04AB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21332918232226E000D04AB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2133291A232226E000D04AB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,6 +93,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21051C3F2322392900160A3C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				21051C402322393600160A3C /* SurveyList */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		21051C402322393600160A3C /* SurveyList */ = {
+			isa = PBXGroup;
+			children = (
+				21332910232226DF00D04AB4 /* SurveyListViewController.swift */,
+				21051C4123223C0C00160A3C /* SurveyListViewModel.swift */,
+				21051C4B232259A500160A3C /* SurveyCell.swift */,
+			);
+			path = SurveyList;
+			sourceTree = "<group>";
+		};
+		21051C4323223FF900160A3C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				21051C442322400800160A3C /* Survey.swift */,
+				21051C462322411800160A3C /* Theme.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		21051C482322485000160A3C /* Extensions+Utils */ = {
+			isa = PBXGroup;
+			children = (
+				21051C492322487700160A3C /* InlineConfigurable.swift */,
+				21051C4D23225A5F00160A3C /* Identifiable.swift */,
+				21051C4F23225A8600160A3C /* UITableView+CellReusable.swift */,
+			);
+			path = "Extensions+Utils";
+			sourceTree = "<group>";
+		};
 		21332902232226DF00D04AB4 = {
 			isa = PBXGroup;
 			children = (
@@ -102,9 +153,11 @@
 		2133290D232226DF00D04AB4 /* Surveys */ = {
 			isa = PBXGroup;
 			children = (
+				21051C482322485000160A3C /* Extensions+Utils */,
+				21051C4323223FF900160A3C /* Models */,
+				21051C3F2322392900160A3C /* Screens */,
 				2133292E23222DC300D04AB4 /* Network */,
 				2133290E232226DF00D04AB4 /* AppDelegate.swift */,
-				21332910232226DF00D04AB4 /* ViewController.swift */,
 				21332915232226E000D04AB4 /* Assets.xcassets */,
 				21332917232226E000D04AB4 /* LaunchScreen.storyboard */,
 				2133291A232226E000D04AB4 /* Info.plist */,
@@ -309,16 +362,23 @@
 			files = (
 				2179809B232233CE00A08DEB /* URLSessionType.swift in Sources */,
 				2179809F2322340F00A08DEB /* URLRequest+init.swift in Sources */,
-				21332911232226DF00D04AB4 /* ViewController.swift in Sources */,
+				21051C5023225A8600160A3C /* UITableView+CellReusable.swift in Sources */,
+				21332911232226DF00D04AB4 /* SurveyListViewController.swift in Sources */,
+				21051C4A2322487700160A3C /* InlineConfigurable.swift in Sources */,
 				21051C3E232235C200160A3C /* NetworkResult.swift in Sources */,
 				2133293423222E4D00D04AB4 /* APIServiceType.swift in Sources */,
 				2133290F232226DF00D04AB4 /* AppDelegate.swift in Sources */,
 				217980A12322342600A08DEB /* URL+appendingParameters.swift in Sources */,
 				217980982322337E00A08DEB /* NetworkManager.swift in Sources */,
 				2179809D232233EF00A08DEB /* URLSession+loadData.swift in Sources */,
+				21051C452322400800160A3C /* Survey.swift in Sources */,
 				2133293223222E2700D04AB4 /* Endpoint.swift in Sources */,
+				21051C4223223C0C00160A3C /* SurveyListViewModel.swift in Sources */,
+				21051C4E23225A5F00160A3C /* Identifiable.swift in Sources */,
+				21051C472322411800160A3C /* Theme.swift in Sources */,
 				2133293623222E6B00D04AB4 /* APIService.swift in Sources */,
 				2133293023222E0F00D04AB4 /* HTTPMethod.swift in Sources */,
+				21051C4C232259A500160A3C /* SurveyCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import Keys
 
 enum APIService {
     case authenticate(username: String, password: String)
+    case getSurveyList(page: Int, surveysPerPage: Int)
 }
 
 // TODO: put https://nimble-survey-api.herokuapp.com into cocoapod keys
@@ -26,6 +28,8 @@ extension APIService: APIServiceType {
         switch self {
         case .authenticate:
             return .post(path: "/oauth/token")
+        case .getSurveyList:
+            return .get(path: "/surveys.json")
         }
     }
 
@@ -40,6 +44,12 @@ extension APIService: APIServiceType {
                 "grant_type": "password",
                 "username": authenticationInfo.username,
                 "password": authenticationInfo.password,
+            ]
+        case .getSurveyList(let surveyInfo):
+            return [
+                "page": surveyInfo.page,
+                "per_page": surveyInfo.surveysPerPage,
+                "access_token": SurveysKeys().accessToken,
             ]
         }
     }
