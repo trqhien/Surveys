@@ -28,7 +28,7 @@ final class SurveyListViewModel: Identifiable {
         self.networkManager = networkManager
     }
 
-    func getSurveyList(page: Int, surveysPerpage: Int = 10, completion: @escaping (NetworkResult<[Survey]>) -> Void) {
+    func getSurveyList(page: Int, surveysPerpage: Int = 20, completion: @escaping (NetworkResult<[Survey]>) -> Void) {
         networkManager.request(
             endpoint: .getSurveyList(page: page, surveysPerPage: surveysPerpage),
             type: [Survey].self,

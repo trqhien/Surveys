@@ -25,8 +25,16 @@ final class SurveyListViewController: UIViewController {
             $0.delegate = self
             $0.allowsSelection = false
             $0.tableFooterView = UIView(frame: .zero)
+            $0.showsVerticalScrollIndicator = false
             $0.register(SurveyCell.self)
+
     }
+
+    private lazy var pageIndicator = PageIndicatorView()
+        .configure {
+            $0.translatesAutoresizingMaskIntoConstraints = false
+            $0.dataSource = self
+        }
 
     init(viewModel: SurveyListViewModel) {
         self.viewModel = viewModel
@@ -41,20 +49,33 @@ final class SurveyListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        addSubviews()
+
         viewModel.getSurveyList(page: 1) { [weak self] result in
             switch result {
             case .success:
-                self?.tableView.reloadData()
+                self?.realoadData()
             case .failure:
                 break
             }
         }
     }
 
-    override func loadView() {
-        super.loadView()
+    private func realoadData() {
+        tableView.reloadData()
+        pageIndicator.reload()
+    }
 
-        view = tableView
+    private func addSubviews() {
+        view.addSubview(tableView)
+        view.addSubview(pageIndicator)
+
+        tableView.edgesToSuperview()
+
+        pageIndicator.right(to: view, offset: -10)
+        pageIndicator.centerY(to: tableView)
+        pageIndicator.heightToSuperview(multiplier: 0.6)
+        pageIndicator.width(14)
     }
 }
 
@@ -74,6 +95,12 @@ extension SurveyListViewController: UITableViewDataSource {
 extension SurveyListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return tableView.frame.height
+    }
+}
+
+extension SurveyListViewController: PageIndicatorViewDataSource {
+    func numberOfItems(in pageIndicatorView: PageIndicatorView) -> Int {
+        return viewModel.numberOfSurvey
     }
 }
 

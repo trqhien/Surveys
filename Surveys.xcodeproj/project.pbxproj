@@ -29,6 +29,7 @@
 		2179809D232233EF00A08DEB /* URLSession+loadData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2179809C232233EF00A08DEB /* URLSession+loadData.swift */; };
 		2179809F2322340F00A08DEB /* URLRequest+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2179809E2322340F00A08DEB /* URLRequest+init.swift */; };
 		217980A12322342600A08DEB /* URL+appendingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217980A02322342600A08DEB /* URL+appendingParameters.swift */; };
+		21A3A43F2323E57A00159035 /* PageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A43E2323E57A00159035 /* PageIndicatorView.swift */; };
 		2884C1B0183A4659482EA50D /* Pods_Surveys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9D4D0D0A8F946769B1698D /* Pods_Surveys.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		2179809C232233EF00A08DEB /* URLSession+loadData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+loadData.swift"; sourceTree = "<group>"; };
 		2179809E2322340F00A08DEB /* URLRequest+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLRequest+init.swift"; sourceTree = "<group>"; };
 		217980A02322342600A08DEB /* URL+appendingParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+appendingParameters.swift"; sourceTree = "<group>"; };
+		21A3A43E2323E57A00159035 /* PageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorView.swift; sourceTree = "<group>"; };
 		A89A3FC38E8E974552DA8E4D /* Pods-Surveys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.release.xcconfig"; path = "Target Support Files/Pods-Surveys/Pods-Surveys.release.xcconfig"; sourceTree = "<group>"; };
 		BD42B07A17973BB3901616B9 /* Pods-Surveys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.debug.xcconfig"; path = "Target Support Files/Pods-Surveys/Pods-Surveys.debug.xcconfig"; sourceTree = "<group>"; };
 		CE9D4D0D0A8F946769B1698D /* Pods_Surveys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surveys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,6 +109,7 @@
 				21332910232226DF00D04AB4 /* SurveyListViewController.swift */,
 				21051C4123223C0C00160A3C /* SurveyListViewModel.swift */,
 				21051C4B232259A500160A3C /* SurveyCell.swift */,
+				21A3A43E2323E57A00159035 /* PageIndicatorView.swift */,
 			);
 			path = SurveyList;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				2133293623222E6B00D04AB4 /* APIService.swift in Sources */,
 				2133293023222E0F00D04AB4 /* HTTPMethod.swift in Sources */,
 				21051C4C232259A500160A3C /* SurveyCell.swift in Sources */,
+				21A3A43F2323E57A00159035 /* PageIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

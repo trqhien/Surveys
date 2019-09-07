@@ -15,6 +15,7 @@ final class SurveyCell: UITableViewCell, CellReusable {
     private let coverImage = UIImageView().configure {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.contentMode = .scaleAspectFill
+        $0.layer.masksToBounds = true
     }
 
     private let titleLabel = UILabel().configure {
@@ -60,12 +61,11 @@ final class SurveyCell: UITableViewCell, CellReusable {
         let url = URL(string: survey.highResCoverImageURLString)
         coverImage.kf.setImage(
             with: url,
-            placeholder: UIImage(named: "cover-placeholder"),
-            options: [.processor(OverlayImageProcessor(overlay: .black, fraction: 0.7))],
-            completionHandler: { result in
+            options: [.processor(OverlayImageProcessor(overlay: .black, fraction: 0.6))],
+            completionHandler: { [weak self] result in
                 switch result {
                 case .failure(let error):
-                    print("❌\(error)")
+                    self?.coverImage.image = UIImage(named: "placeholder-cover")
                 default:
                     break
                 }
