@@ -8,6 +8,7 @@
 
 import UIKit
 import TinyConstraints
+import Kingfisher
 
 final class SurveyCell: UITableViewCell, CellReusable {
 
@@ -18,18 +19,18 @@ final class SurveyCell: UITableViewCell, CellReusable {
 
     private let titleLabel = UILabel().configure {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.font = UIFont.systemFont(ofSize: 20)
-        $0.textColor = .black
+        $0.font = UIFont.boldSystemFont(ofSize: 30)//systemFont(ofSize: 20)
+        $0.textColor = .white
         $0.textAlignment = .center
-        $0.numberOfLines = 1
+        $0.numberOfLines = 0
     }
 
     private let descriptionLabel = UILabel().configure {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.font = UIFont.systemFont(ofSize: 20)
-        $0.textColor = .black
+        $0.textColor = .white
         $0.textAlignment = .center
-        $0.numberOfLines = 1
+        $0.numberOfLines = 0
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -47,11 +48,28 @@ final class SurveyCell: UITableViewCell, CellReusable {
 
     override func prepareForReuse() {
         super.prepareForReuse()
+
+        coverImage.image = nil
+        coverImage.kf.cancelDownloadTask()
     }
 
     func configure(_ survey: Survey) {
         descriptionLabel.text = survey.description
         titleLabel.text = survey.title
+
+        let url = URL(string: survey.highResCoverImageURLString)
+        coverImage.kf.setImage(
+            with: url,
+            placeholder: UIImage(named: "cover-placeholder"),
+            options: [.processor(OverlayImageProcessor(overlay: .black, fraction: 0.7))],
+            completionHandler: { result in
+                switch result {
+                case .failure(let error):
+                    print("❌\(error)")
+                default:
+                    break
+                }
+            })
     }
 
     private func addSubviews() {
@@ -60,7 +78,10 @@ final class SurveyCell: UITableViewCell, CellReusable {
         contentView.addSubview(descriptionLabel)
 
         coverImage.edgesToSuperview()
-        titleLabel.center(in: contentView, offset: CGPoint(x: 0, y: -20))
-        descriptionLabel.center(in: contentView, offset: CGPoint(x: 0, y: 20))
+        titleLabel.center(in: contentView, offset: CGPoint(x: 0, y: -150))
+        titleLabel.horizontalToSuperview(insets: TinyEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
+        descriptionLabel.centerX(to: contentView)
+        descriptionLabel.topToBottom(of: titleLabel, offset: 23)
+        descriptionLabel.horizontalToSuperview(insets: TinyEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
     }
 }

@@ -14,6 +14,10 @@ struct Survey: Codable {
     let description: String
     let coverImageURLString: String
 
+    var highResCoverImageURLString: String {
+        return "\(coverImageURLString)l"
+    }
+
     init(from decoder: Decoder) throws {
         id = try decoder.decode("id")
         title = try decoder.decode("title")
