@@ -34,6 +34,14 @@ final class SurveyCell: UITableViewCell, CellReusable {
         $0.numberOfLines = 0
     }
 
+    private let takeSurveyButton = UIButton().configure {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.setTitle("Take the survey", for: .normal)
+        $0.setTitleColor(.white, for: .normal)
+        $0.backgroundColor = .watermelon
+        $0.layer.cornerRadius = Constants.takeSurveyButtonSize.height / 2
+    }
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
@@ -76,12 +84,24 @@ final class SurveyCell: UITableViewCell, CellReusable {
         contentView.addSubview(coverImage)
         contentView.addSubview(titleLabel)
         contentView.addSubview(descriptionLabel)
+        contentView.addSubview(takeSurveyButton)
 
         coverImage.edgesToSuperview()
         titleLabel.center(in: contentView, offset: CGPoint(x: 0, y: -150))
-        titleLabel.horizontalToSuperview(insets: TinyEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
+        titleLabel.horizontalToSuperview(insets: Constants.horizontalEdgeInsets)
+
         descriptionLabel.centerX(to: contentView)
         descriptionLabel.topToBottom(of: titleLabel, offset: 23)
-        descriptionLabel.horizontalToSuperview(insets: TinyEdgeInsets(top: 0, left: 20, bottom: 0, right: 20))
+        descriptionLabel.horizontalToSuperview(insets: Constants.horizontalEdgeInsets)
+
+        takeSurveyButton.size(Constants.takeSurveyButtonSize)
+        takeSurveyButton.center(in: contentView, offset: CGPoint(x: 0, y: 150))
+    }
+}
+
+private extension SurveyCell {
+    struct Constants {
+        static let takeSurveyButtonSize = CGSize(width: 200, height: 30)
+        static let horizontalEdgeInsets = TinyEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
 }
