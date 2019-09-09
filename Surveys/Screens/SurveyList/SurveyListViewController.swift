@@ -11,6 +11,8 @@ import TinyConstraints
 
 final class SurveyListViewController: UIViewController {
 
+    weak var coordinator: MainCoordinator?
+
     private let viewModel: SurveyListViewModel
 
     private lazy var tableView = UITableView()
@@ -28,7 +30,22 @@ final class SurveyListViewController: UIViewController {
             $0.showsVerticalScrollIndicator = false
             $0.showsHorizontalScrollIndicator = false
             $0.register(SurveyCell.self)
-    }
+        }
+
+    private lazy var reloadButton = UIButton(type: .system)
+        .configure {
+            $0.setImage(UIImage(named: "icon-reload")?.withRenderingMode(.alwaysOriginal), for: .normal)
+            $0.frame = CGRect(origin: .zero, size: Constants.barButtonSize)
+            $0.addTarget(self, action: #selector(reloadButtonTapped(_:)), for: .touchUpInside)
+        }
+
+    private let menuButton = UIBarButtonItem(
+        image: UIImage(named: "icon-hamburger-menu")?.withRenderingMode(.alwaysOriginal),
+        style: .plain,
+        target: nil,
+        action: nil
+    )
+        .configure { $0.isEnabled = false }
 
     private lazy var pageIndicator = PageIndicatorView()
         .configure {
@@ -49,9 +66,51 @@ final class SurveyListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        addSubviews()
+        setUpNavigationItems()
+        fetchSurveyList()
+    }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        addSubviews()
+    }
+
+    private func setUpNavigationItems() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: reloadButton)
+        navigationItem.rightBarButtonItem = menuButton
+    }
+
+    private func realoadData() {
+        tableView.reloadData()
+        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: false)
+        pageIndicator.reload()
+        pageIndicator.focus(at: 0)
+    }
+
+    private func addSubviews() {
+        view.addSubview(tableView)
+        view.addSubview(pageIndicator)
+
+        if #available(iOS 11.0, *) {
+            tableView.edges(to: view.safeAreaLayoutGuide)
+        } else {
+            tableView.edges(to: view.layoutMarginsGuide)
+        }
+
+        pageIndicator.right(to: view, offset: -10)
+        pageIndicator.centerY(to: tableView)
+        pageIndicator.heightToSuperview(multiplier: 0.6)
+        pageIndicator.width(14)
+    }
+
+    @objc private func reloadButtonTapped(_ sender: UIBarButtonItem) {
+        fetchSurveyList()
+    }
+
+    private func fetchSurveyList() {
+        startReloadButtonstartAnimation()
         viewModel.getSurveyList(page: 1) { [weak self] result in
+            self?.stopReloadButtonAnimation()
             switch result {
             case .success:
                 self?.realoadData()
@@ -61,21 +120,20 @@ final class SurveyListViewController: UIViewController {
         }
     }
 
-    private func realoadData() {
-        tableView.reloadData()
-        pageIndicator.reload()
+    private func startReloadButtonstartAnimation() {
+        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation")
+        rotationAnimation.fromValue = 0.0
+        rotationAnimation.toValue = Double.pi * 2
+        rotationAnimation.duration = 1
+        rotationAnimation.repeatCount = .infinity
+
+        navigationItem.leftBarButtonItem?.isEnabled = false
+        reloadButton.layer.add(rotationAnimation, forKey: "reloadButtonRotation")
     }
 
-    private func addSubviews() {
-        view.addSubview(tableView)
-        view.addSubview(pageIndicator)
-
-        tableView.edgesToSuperview()
-
-        pageIndicator.right(to: view, offset: -10)
-        pageIndicator.centerY(to: tableView)
-        pageIndicator.heightToSuperview(multiplier: 0.6)
-        pageIndicator.width(14)
+    private func stopReloadButtonAnimation() {
+        navigationItem.leftBarButtonItem?.isEnabled = true
+        reloadButton.layer.removeAnimation(forKey: "reloadButtonRotation")
     }
 }
 
@@ -113,12 +171,17 @@ extension SurveyListViewController: UIScrollViewDelegate {
     func scrollViewDidScrollToTop(_ scrollView: UIScrollView) {
         pageIndicator.focus(at: 0)
     }
-
 }
 
 extension SurveyListViewController: PageIndicatorViewDataSource {
     func numberOfItems(in pageIndicatorView: PageIndicatorView) -> Int {
         return viewModel.numberOfSurvey
+    }
+}
+
+private extension SurveyListViewController {
+    struct Constants {
+        static let barButtonSize = CGSize(width: 34, height: 34)
     }
 }
 

@@ -11,6 +11,8 @@ import Foundation
 final class SurveyListViewModel: Identifiable {
     private let networkManager: NetworkManager
 
+    private var fetchSurveyListTask: URLSessionDataTask?
+
     private let readWriteQueue = DispatchQueue(label: "\(SurveyListViewModel.identifier)-readWriteQueue", qos: .userInteractive, attributes: .concurrent)
 
     private var _surveys: [Survey] = []
@@ -29,10 +31,15 @@ final class SurveyListViewModel: Identifiable {
     }
 
     func getSurveyList(page: Int, surveysPerpage: Int = 20, completion: @escaping (NetworkResult<[Survey]>) -> Void) {
-        networkManager.request(
+
+        guard fetchSurveyListTask == nil else { return }
+        
+        fetchSurveyListTask = networkManager.request(
             endpoint: .getSurveyList(page: page, surveysPerPage: surveysPerpage),
             type: [Survey].self,
             completion: { [weak self] result in
+                self?.fetchSurveyListTask = nil
+                
                 switch result {
                 case .success(let surveys):
                     self?.updateSurvey(surveys)

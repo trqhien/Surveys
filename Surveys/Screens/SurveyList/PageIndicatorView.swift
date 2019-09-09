@@ -18,6 +18,7 @@ final class PageIndicatorView: UIView {
             if oldValue != nil {
                 views[oldValue].backgroundColor = .clear
             }
+
             views[currentIndex].backgroundColor = .white
         }
     }
@@ -46,8 +47,6 @@ final class PageIndicatorView: UIView {
             item.layer.borderColor = UIColor.white.cgColor
             return item
         }
-
-        currentIndex = 0
 
         let stackView = UIStackView(arrangedSubviews: views)
         stackView.translatesAutoresizingMaskIntoConstraints = false
