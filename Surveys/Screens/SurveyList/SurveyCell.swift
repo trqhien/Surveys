@@ -62,6 +62,9 @@ final class SurveyCell: UITableViewCell, CellReusable {
         super.prepareForReuse()
 
         coverImage.image = nil
+    }
+
+    func cancelDownload() {
         coverImage.kf.cancelDownloadTask()
     }
 

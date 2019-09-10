@@ -163,6 +163,12 @@ extension SurveyListViewController: UITableViewDataSource {
         cell.configure(survey)
         return cell
     }
+
+    func tableView(_ tableView: UITableView, didEndDisplaying cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let cell = cell as? SurveyCell else { return }
+
+        cell.cancelDownload()
+    }
 }
 
 extension SurveyListViewController: UITableViewDelegate {
