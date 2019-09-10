@@ -6,10 +6,13 @@ target 'Surveys' do
   pod 'Codextended', :git => 'https://github.com/JohnSundell/Codextended.git', :tag => '0.3.0'
   pod 'TinyConstraints'
   pod 'Kingfisher', '~> 5.0'
+  pod 'SwiftKeychainWrapper'
 
   plugin 'cocoapods-keys', {
     :project => "Surveys",
     :keys => [
-      "accessToken",
+      "username",
+      "password",
+      "baseURL"
     ]}
 end

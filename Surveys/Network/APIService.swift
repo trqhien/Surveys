@@ -8,17 +8,17 @@
 
 import Foundation
 import Keys
+import SwiftKeychainWrapper
 
 enum APIService {
     case authenticate(username: String, password: String)
-    case getSurveyList(page: Int, surveysPerPage: Int)
+    case getSurveyList(page: Int, surveysPerPage: Int, accessToken: String)
 }
 
-// TODO: put https://nimble-survey-api.herokuapp.com into cocoapod keys
 extension APIService: APIServiceType {
     var baseURL: URL {
-        guard let url = URL(string: "https://nimble-survey-api.herokuapp.com") else {
-            preconditionFailure("FAILED to construct URL with https://nimble-survey-api.herokuapp.com")
+        guard let url = URL(string: SurveysKeys().baseURL) else {
+            preconditionFailure("FAILED to construct URL with \(SurveysKeys().baseURL)")
         }
 
         return url
@@ -49,7 +49,7 @@ extension APIService: APIServiceType {
             return [
                 "page": surveyInfo.page,
                 "per_page": surveyInfo.surveysPerPage,
-                "access_token": SurveysKeys().accessToken,
+                "access_token": surveyInfo.accessToken,
             ]
         }
     }

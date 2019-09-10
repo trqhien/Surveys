@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftKeychainWrapper
 
 final class SurveyListViewModel: Identifiable {
     private let networkManager: NetworkManager
@@ -35,7 +36,7 @@ final class SurveyListViewModel: Identifiable {
         guard fetchSurveyListTask == nil else { return }
         
         fetchSurveyListTask = networkManager.request(
-            endpoint: .getSurveyList(page: page, surveysPerPage: surveysPerpage),
+            endpoint: .getSurveyList(page: page, surveysPerPage: surveysPerpage, accessToken: KeychainWrapper.accessToken ?? ""),
             type: [Survey].self,
             completion: { [weak self] result in
                 self?.fetchSurveyListTask = nil

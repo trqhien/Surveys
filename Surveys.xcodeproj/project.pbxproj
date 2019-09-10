@@ -32,7 +32,11 @@
 		21A3A43F2323E57A00159035 /* PageIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A43E2323E57A00159035 /* PageIndicatorView.swift */; };
 		21A3A4412325582800159035 /* UIColor+rbg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A4402325582800159035 /* UIColor+rbg.swift */; };
 		21A3A44A2326034400159035 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A4492326034400159035 /* Coordinator.swift */; };
-		21A3A44D2326BD4800159035 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A44C2326BD4700159035 /* MainCoordinator.swift */; };
+		21A3A44D2326BD4800159035 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A44C2326BD4700159035 /* RootCoordinator.swift */; };
+		21A3A450232752B500159035 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A44F232752B500159035 /* Keychain.swift */; };
+		21A3A4532327627F00159035 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A4522327627F00159035 /* SplashScreenViewController.swift */; };
+		21A3A455232762A600159035 /* SpashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A454232762A600159035 /* SpashScreenViewModel.swift */; };
+		21A3A45723276B7300159035 /* AuthenticationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A45623276B7300159035 /* AuthenticationResult.swift */; };
 		2884C1B0183A4659482EA50D /* Pods_Surveys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9D4D0D0A8F946769B1698D /* Pods_Surveys.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +80,11 @@
 		21A3A43E2323E57A00159035 /* PageIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicatorView.swift; sourceTree = "<group>"; };
 		21A3A4402325582800159035 /* UIColor+rbg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+rbg.swift"; sourceTree = "<group>"; };
 		21A3A4492326034400159035 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		21A3A44C2326BD4700159035 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		21A3A44C2326BD4700159035 /* RootCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
+		21A3A44F232752B500159035 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		21A3A4522327627F00159035 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		21A3A454232762A600159035 /* SpashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpashScreenViewModel.swift; sourceTree = "<group>"; };
+		21A3A45623276B7300159035 /* AuthenticationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResult.swift; sourceTree = "<group>"; };
 		A89A3FC38E8E974552DA8E4D /* Pods-Surveys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.release.xcconfig"; path = "Target Support Files/Pods-Surveys/Pods-Surveys.release.xcconfig"; sourceTree = "<group>"; };
 		BD42B07A17973BB3901616B9 /* Pods-Surveys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.debug.xcconfig"; path = "Target Support Files/Pods-Surveys/Pods-Surveys.debug.xcconfig"; sourceTree = "<group>"; };
 		CE9D4D0D0A8F946769B1698D /* Pods_Surveys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surveys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,6 +112,7 @@
 		21051C3F2322392900160A3C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				21A3A4512327625B00159035 /* SplashScreen */,
 				21051C402322393600160A3C /* SurveyList */,
 			);
 			path = Screens;
@@ -125,6 +134,7 @@
 			children = (
 				21051C442322400800160A3C /* Survey.swift */,
 				21051C462322411800160A3C /* Theme.swift */,
+				21A3A45623276B7300159035 /* AuthenticationResult.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +173,7 @@
 		2133290D232226DF00D04AB4 /* Surveys */ = {
 			isa = PBXGroup;
 			children = (
+				21A3A44E2327529100159035 /* Keychain */,
 				21A3A4482326031C00159035 /* Coordinator */,
 				21051C482322485000160A3C /* Extensions+Utils */,
 				21051C4323223FF900160A3C /* Models */,
@@ -214,9 +225,26 @@
 			isa = PBXGroup;
 			children = (
 				21A3A4492326034400159035 /* Coordinator.swift */,
-				21A3A44C2326BD4700159035 /* MainCoordinator.swift */,
+				21A3A44C2326BD4700159035 /* RootCoordinator.swift */,
 			);
 			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		21A3A44E2327529100159035 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				21A3A44F232752B500159035 /* Keychain.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		21A3A4512327625B00159035 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				21A3A4522327627F00159035 /* SplashScreenViewController.swift */,
+				21A3A454232762A600159035 /* SpashScreenViewModel.swift */,
+			);
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 		596B9F611DBF7C9AE51743B4 /* Frameworks */ = {
@@ -383,12 +411,15 @@
 				2179809B232233CE00A08DEB /* URLSessionType.swift in Sources */,
 				2179809F2322340F00A08DEB /* URLRequest+init.swift in Sources */,
 				21051C5023225A8600160A3C /* UITableView+CellReusable.swift in Sources */,
+				21A3A4532327627F00159035 /* SplashScreenViewController.swift in Sources */,
 				21332911232226DF00D04AB4 /* SurveyListViewController.swift in Sources */,
 				21051C4A2322487700160A3C /* InlineConfigurable.swift in Sources */,
+				21A3A450232752B500159035 /* Keychain.swift in Sources */,
 				21051C3E232235C200160A3C /* NetworkResult.swift in Sources */,
 				21A3A44A2326034400159035 /* Coordinator.swift in Sources */,
 				2133293423222E4D00D04AB4 /* APIServiceType.swift in Sources */,
-				21A3A44D2326BD4800159035 /* MainCoordinator.swift in Sources */,
+				21A3A45723276B7300159035 /* AuthenticationResult.swift in Sources */,
+				21A3A44D2326BD4800159035 /* RootCoordinator.swift in Sources */,
 				2133290F232226DF00D04AB4 /* AppDelegate.swift in Sources */,
 				217980A12322342600A08DEB /* URL+appendingParameters.swift in Sources */,
 				217980982322337E00A08DEB /* NetworkManager.swift in Sources */,
@@ -400,6 +431,7 @@
 				21051C4E23225A5F00160A3C /* Identifiable.swift in Sources */,
 				21051C472322411800160A3C /* Theme.swift in Sources */,
 				2133293623222E6B00D04AB4 /* APIService.swift in Sources */,
+				21A3A455232762A600159035 /* SpashScreenViewModel.swift in Sources */,
 				2133293023222E0F00D04AB4 /* HTTPMethod.swift in Sources */,
 				21051C4C232259A500160A3C /* SurveyCell.swift in Sources */,
 				21A3A43F2323E57A00159035 /* PageIndicatorView.swift in Sources */,

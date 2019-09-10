@@ -11,7 +11,7 @@ import TinyConstraints
 
 final class SurveyListViewController: UIViewController {
 
-    weak var coordinator: MainCoordinator?
+    weak var coordinator: RootCoordinator?
 
     private let viewModel: SurveyListViewModel
 

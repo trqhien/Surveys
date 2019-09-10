@@ -1,0 +1,23 @@
+//
+//  AuthenticationResult.swift
+//  Surveys
+//
+//  Created by Hien Quang Tran on 9/10/19.
+//  Copyright © 2019 Hien Quang Tran. All rights reserved.
+//
+
+import Codextended
+
+struct AuthenticationResult: Codable {
+    let accessToken: String
+    let tokenType: String
+    let expiresIn: Int
+    let createdAt: Int
+
+    init(from decoder: Decoder) throws {
+        accessToken = try decoder.decode("access_token")
+        tokenType = try decoder.decode("token_type")
+        expiresIn = try decoder.decode("expires_in")
+        createdAt = try decoder.decode("created_at")
+    }
+}

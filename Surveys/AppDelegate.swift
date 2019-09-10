@@ -13,19 +13,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var coordinator: MainCoordinator?
+    var coordinator: RootCoordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
+        window = UIWindow(frame: UIScreen.main.bounds)
         let navigationController = UINavigationController()
         navigationController.navigationBar.isTranslucent = true
         navigationController.navigationBar.barStyle = .black
-        coordinator = MainCoordinator(navigationController: navigationController)
+        coordinator = RootCoordinator(window: window!, navigationController: navigationController)
         coordinator?.start()
-
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navigationController
-        window?.makeKeyAndVisible()
 
         return true
     }
