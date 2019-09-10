@@ -15,7 +15,7 @@ final class PageIndicatorView: UIView {
 
     private(set) var currentIndex: Int! {
         didSet {
-            if oldValue != nil {
+            if oldValue != nil && 0..<views.count ~= oldValue {
                 views[oldValue].backgroundColor = .clear
             }
 

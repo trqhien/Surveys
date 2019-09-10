@@ -108,7 +108,7 @@ final class SurveyCell: UITableViewCell, CellReusable {
 
 private extension SurveyCell {
     struct Constants {
-        static let takeSurveyButtonSize = CGSize(width: 200, height: 30)
+        static let takeSurveyButtonSize = CGSize(width: 200, height: 60)
         static let horizontalEdgeInsets = TinyEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
 }
