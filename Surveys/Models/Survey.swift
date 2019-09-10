@@ -7,6 +7,7 @@
 //
 
 import Codextended
+import DeepDiff
 
 struct Survey: Codable {
     let id: String
@@ -29,5 +30,15 @@ struct Survey: Codable {
 extension Survey: Equatable {
     static func == (lhs: Survey, rhs: Survey) -> Bool {
         return lhs.id == rhs.id
+    }
+}
+
+extension Survey: DiffAware {
+    var diffId: String {
+        return id
+    }
+
+    static func compareContent(_ a: Survey, _ b: Survey) -> Bool {
+        return a.id == b.id
     }
 }

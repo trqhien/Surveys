@@ -8,6 +8,7 @@
 
 import UIKit
 import TinyConstraints
+import DeepDiff
 
 final class SurveyListViewController: UIViewController {
 
@@ -80,11 +81,21 @@ final class SurveyListViewController: UIViewController {
         navigationItem.rightBarButtonItem = menuButton
     }
 
-    private func realoadData() {
-        tableView.reloadData()
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: false)
-        pageIndicator.reload()
-        pageIndicator.focus(at: 0)
+    private func reloadData(_ newSurveys: [Survey]) {
+        let changes = diff(old: viewModel.survey, new: newSurveys)
+
+        tableView.reload(
+            changes: changes,
+            section: 0,
+            updateData: {
+                viewModel.updateSurvey(newSurveys)
+            },
+            completion: { [weak self] isSuccess in
+                self?.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: false)
+                self?.pageIndicator.reload()
+                self?.pageIndicator.focus(at: 0)
+            }
+        )
     }
 
     private func addSubviews() {
@@ -112,8 +123,8 @@ final class SurveyListViewController: UIViewController {
         viewModel.getSurveyList(page: 1) { [weak self] result in
             self?.stopReloadButtonAnimation()
             switch result {
-            case .success:
-                self?.realoadData()
+            case .success(let newSurveys):
+                self?.reloadData(newSurveys)
             case .failure:
                 break
             }

@@ -10,6 +10,7 @@ target 'Surveys' do
   pod 'TinyConstraints'
   pod 'Kingfisher', '~> 5.0'
   pod 'SwiftKeychainWrapper'
+  pod 'DeepDiff'
   codable_extended_pod
 
   plugin 'cocoapods-keys', {

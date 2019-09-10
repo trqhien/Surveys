@@ -18,6 +18,15 @@ final class SurveyListViewModel: Identifiable {
 
     private var _surveys: [Survey] = []
 
+    var survey: [Survey] {
+        var surveysCopy: [Survey]!
+        readWriteQueue.sync {
+            surveysCopy = self._surveys
+        }
+
+        return surveysCopy
+    }
+
     var numberOfSurvey: Int {
         var temp: Int!
         readWriteQueue.sync {
@@ -40,19 +49,11 @@ final class SurveyListViewModel: Identifiable {
             type: [Survey].self,
             completion: { [weak self] result in
                 self?.fetchSurveyListTask = nil
-                
-                switch result {
-                case .success(let surveys):
-                    self?.updateSurvey(surveys)
-                case .failure:
-                    break
-                }
-
                 completion(result)
             })
     }
 
-    private func updateSurvey(_ newSurveys: [Survey]) {
+    func updateSurvey(_ newSurveys: [Survey]) {
         readWriteQueue.async(flags: .barrier) { [weak self] in
             self?._surveys = newSurveys
         }
