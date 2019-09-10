@@ -37,7 +37,12 @@
 		21A3A4532327627F00159035 /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A4522327627F00159035 /* SplashScreenViewController.swift */; };
 		21A3A455232762A600159035 /* SpashScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A454232762A600159035 /* SpashScreenViewModel.swift */; };
 		21A3A45723276B7300159035 /* AuthenticationResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A45623276B7300159035 /* AuthenticationResult.swift */; };
+		21A3A45C23277A2600159035 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A45B23277A2600159035 /* NetworkManagerTests.swift */; };
+		21A3A45F23277AD400159035 /* HTTPResponseMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A45E23277AD400159035 /* HTTPResponseMocks.swift */; };
+		21A3A46123277BCB00159035 /* SurveyListMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A46023277BCB00159035 /* SurveyListMocks.swift */; };
+		21A3A4642327816500159035 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A3A4632327816500159035 /* MockURLSession.swift */; };
 		2884C1B0183A4659482EA50D /* Pods_Surveys.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE9D4D0D0A8F946769B1698D /* Pods_Surveys.framework */; };
+		AB705B78BA1ABF23C3B05C83 /* libPods-SurveysTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABB7B5D07E8636D1268390DC /* libPods-SurveysTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		06FAD64FDC4A2ECA48EAA348 /* Pods-SurveysTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveysTests.debug.xcconfig"; path = "Target Support Files/Pods-SurveysTests/Pods-SurveysTests.debug.xcconfig"; sourceTree = "<group>"; };
 		21051C3D232235C200160A3C /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
 		21051C4123223C0C00160A3C /* SurveyListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListViewModel.swift; sourceTree = "<group>"; };
 		21051C442322400800160A3C /* Survey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Survey.swift; sourceTree = "<group>"; };
@@ -85,9 +91,15 @@
 		21A3A4522327627F00159035 /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		21A3A454232762A600159035 /* SpashScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpashScreenViewModel.swift; sourceTree = "<group>"; };
 		21A3A45623276B7300159035 /* AuthenticationResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationResult.swift; sourceTree = "<group>"; };
+		21A3A45B23277A2600159035 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
+		21A3A45E23277AD400159035 /* HTTPResponseMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPResponseMocks.swift; sourceTree = "<group>"; };
+		21A3A46023277BCB00159035 /* SurveyListMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyListMocks.swift; sourceTree = "<group>"; };
+		21A3A4632327816500159035 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		A89A3FC38E8E974552DA8E4D /* Pods-Surveys.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.release.xcconfig"; path = "Target Support Files/Pods-Surveys/Pods-Surveys.release.xcconfig"; sourceTree = "<group>"; };
+		ABB7B5D07E8636D1268390DC /* libPods-SurveysTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SurveysTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD42B07A17973BB3901616B9 /* Pods-Surveys.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Surveys.debug.xcconfig"; path = "Target Support Files/Pods-Surveys/Pods-Surveys.debug.xcconfig"; sourceTree = "<group>"; };
 		CE9D4D0D0A8F946769B1698D /* Pods_Surveys.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Surveys.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F13FE9DB88609A664F0D1BED /* Pods-SurveysTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SurveysTests.release.xcconfig"; path = "Target Support Files/Pods-SurveysTests/Pods-SurveysTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB705B78BA1ABF23C3B05C83 /* libPods-SurveysTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +203,7 @@
 		21332922232226E000D04AB4 /* SurveysTests */ = {
 			isa = PBXGroup;
 			children = (
+				21A3A458232779DD00159035 /* NetworkManagerTest */,
 				21332923232226E000D04AB4 /* SurveysTests.swift */,
 				21332925232226E000D04AB4 /* Info.plist */,
 			);
@@ -199,6 +213,7 @@
 		2133292E23222DC300D04AB4 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				21A3A4622327814700159035 /* Mocks */,
 				21798099232233B300A08DEB /* Extensions */,
 				2133292F23222E0F00D04AB4 /* HTTPMethod.swift */,
 				2133293123222E2700D04AB4 /* Endpoint.swift */,
@@ -247,10 +262,37 @@
 			path = SplashScreen;
 			sourceTree = "<group>";
 		};
+		21A3A458232779DD00159035 /* NetworkManagerTest */ = {
+			isa = PBXGroup;
+			children = (
+				21A3A45D23277AA800159035 /* Mocks */,
+				21A3A45B23277A2600159035 /* NetworkManagerTests.swift */,
+			);
+			path = NetworkManagerTest;
+			sourceTree = "<group>";
+		};
+		21A3A45D23277AA800159035 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				21A3A45E23277AD400159035 /* HTTPResponseMocks.swift */,
+				21A3A46023277BCB00159035 /* SurveyListMocks.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		21A3A4622327814700159035 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				21A3A4632327816500159035 /* MockURLSession.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		596B9F611DBF7C9AE51743B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				CE9D4D0D0A8F946769B1698D /* Pods_Surveys.framework */,
+				ABB7B5D07E8636D1268390DC /* libPods-SurveysTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -260,6 +302,8 @@
 			children = (
 				BD42B07A17973BB3901616B9 /* Pods-Surveys.debug.xcconfig */,
 				A89A3FC38E8E974552DA8E4D /* Pods-Surveys.release.xcconfig */,
+				06FAD64FDC4A2ECA48EAA348 /* Pods-SurveysTests.debug.xcconfig */,
+				F13FE9DB88609A664F0D1BED /* Pods-SurveysTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -290,6 +334,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2133292B232226E000D04AB4 /* Build configuration list for PBXNativeTarget "SurveysTests" */;
 			buildPhases = (
+				C10B415D696E5211ADB77AF6 /* [CP] Check Pods Manifest.lock */,
 				2133291B232226E000D04AB4 /* Sources */,
 				2133291C232226E000D04AB4 /* Frameworks */,
 				2133291D232226E000D04AB4 /* Resources */,
@@ -379,6 +424,28 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Surveys/Pods-Surveys-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C10B415D696E5211ADB77AF6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SurveysTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		CCAE28807BB3F6ED06DD14C6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -412,6 +479,7 @@
 				2179809F2322340F00A08DEB /* URLRequest+init.swift in Sources */,
 				21051C5023225A8600160A3C /* UITableView+CellReusable.swift in Sources */,
 				21A3A4532327627F00159035 /* SplashScreenViewController.swift in Sources */,
+				21A3A4642327816500159035 /* MockURLSession.swift in Sources */,
 				21332911232226DF00D04AB4 /* SurveyListViewController.swift in Sources */,
 				21051C4A2322487700160A3C /* InlineConfigurable.swift in Sources */,
 				21A3A450232752B500159035 /* Keychain.swift in Sources */,
@@ -442,7 +510,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21A3A45C23277A2600159035 /* NetworkManagerTests.swift in Sources */,
 				21332924232226E000D04AB4 /* SurveysTests.swift in Sources */,
+				21A3A45F23277AD400159035 /* HTTPResponseMocks.swift in Sources */,
+				21A3A46123277BCB00159035 /* SurveyListMocks.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,7 +669,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hientrq.Surveys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -617,13 +688,14 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hientrq.Surveys;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		2133292C232226E000D04AB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 06FAD64FDC4A2ECA48EAA348 /* Pods-SurveysTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -644,6 +716,7 @@
 		};
 		2133292D232226E000D04AB4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F13FE9DB88609A664F0D1BED /* Pods-SurveysTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

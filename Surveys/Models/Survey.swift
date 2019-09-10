@@ -25,3 +25,9 @@ struct Survey: Codable {
         coverImageURLString = try decoder.decode("cover_image_url")
     }
 }
+
+extension Survey: Equatable {
+    static func == (lhs: Survey, rhs: Survey) -> Bool {
+        return lhs.id == rhs.id
+    }
+}
