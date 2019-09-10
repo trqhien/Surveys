@@ -129,3 +129,7 @@ let surveyListMockWithoutIDds = """
         }
     ]
 """.data(using: .utf8)!
+
+let emptySurveyListMock = """
+    []
+""".data(using: .utf8)!
