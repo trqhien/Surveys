@@ -41,14 +41,13 @@ final class SurveyCell: UITableViewCell, CellReusable {
         $0.backgroundColor = .watermelon
         $0.layer.cornerRadius = Constants.takeSurveyButtonSize.height / 2
         $0.addTarget(self, action: #selector(takeSurveyButtonTapped(_:)), for: .touchUpInside)
+        $0.isHidden = true
     }
 
     var takeSurvey: (() -> Void)!
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-
-        contentView.layoutMargins = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
 
         addSubviews()
     }
@@ -71,6 +70,7 @@ final class SurveyCell: UITableViewCell, CellReusable {
     func configure(_ survey: Survey) {
         descriptionLabel.text = survey.description
         titleLabel.text = survey.title
+        takeSurveyButton.isHidden = false
 
         let url = URL(string: survey.highResCoverImageURLString)
         coverImage.kf.setImage(
