@@ -37,4 +37,9 @@ final class RootCoordinator: Coordinator {
 
         window.makeKeyAndVisible()
     }
+
+    func takeSurvey(_ survey: Survey) {
+        let surveyViewController = SurveyViewController(survey: survey)
+        navigationController.pushViewController(surveyViewController, animated: true)
+    }
 }

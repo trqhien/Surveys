@@ -34,13 +34,16 @@ final class SurveyCell: UITableViewCell, CellReusable {
         $0.numberOfLines = 0
     }
 
-    private let takeSurveyButton = UIButton().configure {
+    private lazy var takeSurveyButton = UIButton().configure {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.setTitle("Take the survey", for: .normal)
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = .watermelon
         $0.layer.cornerRadius = Constants.takeSurveyButtonSize.height / 2
+        $0.addTarget(self, action: #selector(takeSurveyButtonTapped(_:)), for: .touchUpInside)
     }
+
+    var takeSurvey: (() -> Void)!
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -96,6 +99,10 @@ final class SurveyCell: UITableViewCell, CellReusable {
 
         takeSurveyButton.size(Constants.takeSurveyButtonSize)
         takeSurveyButton.center(in: contentView, offset: CGPoint(x: 0, y: 150))
+    }
+
+    @objc private func takeSurveyButtonTapped(_ sender: UIButton) {
+        takeSurvey()
     }
 }
 

@@ -145,6 +145,9 @@ extension SurveyListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath) as SurveyCell
         let survey = viewModel.survey(at: indexPath.row)
+        cell.takeSurvey = { [weak self] in
+            self?.coordinator?.takeSurvey(survey)
+        }
         cell.configure(survey)
         return cell
     }
