@@ -19,7 +19,9 @@ final class PageIndicatorView: UIView {
                 views[oldValue].backgroundColor = .clear
             }
 
-            views[currentIndex].backgroundColor = .white
+            if 0..<views.count ~= currentIndex {
+                views[currentIndex].backgroundColor = .white
+            }
         }
     }
 

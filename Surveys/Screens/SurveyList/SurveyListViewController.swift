@@ -82,7 +82,9 @@ final class SurveyListViewController: UIViewController {
 
     private func realoadData() {
         tableView.reloadData()
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: false)
+        if viewModel.numberOfSurvey > 0 {
+            tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: false)
+        }
         pageIndicator.reload()
         pageIndicator.focus(at: 0)
     }
@@ -110,12 +112,22 @@ final class SurveyListViewController: UIViewController {
     private func fetchSurveyList() {
         startReloadButtonstartAnimation()
         viewModel.getSurveyList(page: 1) { [weak self] result in
-            self?.stopReloadButtonAnimation()
+            guard let self = self else { return }
+
+            self.stopReloadButtonAnimation()
+
             switch result {
-            case .success:
-                self?.realoadData()
-            case .failure:
-                break
+            case .success(let surveys):
+                if surveys.isEmpty {
+                    self.tableView.setEmptyView(title: "Nothing's here", message: "You currently don't have any survey.")
+                } else {
+                    self.tableView.restore()
+                }
+
+                self.realoadData()
+            case .failure(let error):
+                // TODO: We can show a more user-friendly and general (Please try again later, We cannot fetch you data, etc) message here instead of just showing the exact error message
+                self.tableView.setEmptyView(title: "Something's wrong", message: error.localizedDescription)
             }
         }
     }
