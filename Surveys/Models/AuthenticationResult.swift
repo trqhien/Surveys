@@ -21,3 +21,5 @@ struct AuthenticationResult: Codable {
         createdAt = try decoder.decode("created_at")
     }
 }
+
+// TODO: I can improve the flow a little bit by auto reauthenticate when ever the token expires. However, I don't really know how the value `createdAt` is calculated. But once I do, I can use that to figure out whether or not my access token has expired
