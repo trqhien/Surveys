@@ -34,7 +34,7 @@ extension APIService: APIServiceType {
     }
 
     var headers: [String : String] {
-        return ["application/json": "Content-Type"]
+        return ["Content-Type": "application/json"]
     }
 
     var parameters: [String: Any] {

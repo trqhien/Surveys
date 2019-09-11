@@ -19,7 +19,7 @@ extension URLRequest {
         httpMethod = endpoint.endpoint.method.rawValue
 
         endpoint.headers.forEach {
-            addValue($0.key, forHTTPHeaderField: $0.value)
+            addValue($0.value, forHTTPHeaderField: $0.key)
         }
 
         if endpoint.endpoint.method == .post || endpoint.endpoint.method == .put {
